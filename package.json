@@ -1,4 +1,24 @@
 {
   "name": "locale-tool",
-  "packageManager": "yarn@4.10.3"
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "cli": "yarn node dist/index.js",
+    "bundle": "esbuild src/index.ts --bundle --platform=node --format=cjs --outfile=dist/cli.cjs"
+  },
+  "packageManager": "yarn@4.10.3",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
 }
